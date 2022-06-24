@@ -1,8 +1,7 @@
-import { csvFormat } from "d3";
-export const message = (data) => {
-  let message = "";
-  message = message + Math.round(csvFormat(data).length / 1024) + " kB\n";
-  message = message + data.length + " rows\n";
-  message = message + data.columns.length + " columns";
-  return message;
+import { range } from "d3";
+export const generateData = (value, length = 5) => {
+  return range(length).map((item, index) => ({
+    data: index,
+    value: 20,
+  }));
 };
