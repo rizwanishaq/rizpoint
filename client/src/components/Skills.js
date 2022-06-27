@@ -16,8 +16,8 @@ const Arc = ({ data, index, createArc, colors, skill }) => (
   </g>
 );
 
-const Pie = (props) => {
-  const skills = ["python", "Nodejs", "React", "D3", "Tensorflow"];
+const Skills = (props) => {
+  const skills = ["python", "MERN", "Tensorflow", "Pytorch", "Databases"];
   const createPie = d3
     .pie()
     .value((d) => d.value)
@@ -56,4 +56,4 @@ const Pie = (props) => {
   );
 };
 
-export default Pie;
+export default Skills;
