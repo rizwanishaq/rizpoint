@@ -26,6 +26,16 @@ const Home = () => {
           </Link>
         </Card.Body>
       </Card>
+
+      <Card className="text-center">
+        <Card.Body>
+          <Card.Title>Visx PieChart</Card.Title>
+          <Card.Text>PieChart example from VisX</Card.Text>
+          <Link to="/pies">
+            <Button variant="dark">Go to Page</Button>
+          </Link>
+        </Card.Body>
+      </Card>
     </Container>
   );
 };

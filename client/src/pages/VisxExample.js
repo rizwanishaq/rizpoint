@@ -25,7 +25,7 @@ const VisxExample = ({ width, height, events = false }) => {
         domain: data.map((d) => getLetter(d)),
         padding: 0.4,
       }),
-    [xMax]
+    [xMax, data]
   );
   const yScale = useMemo(
     () =>
@@ -34,7 +34,7 @@ const VisxExample = ({ width, height, events = false }) => {
         round: true,
         domain: [0, Math.max(...data.map((d) => getLetterFrequency(d)))],
       }),
-    [yMax]
+    [yMax, data]
   );
 
   return width < 10 ? null : (
