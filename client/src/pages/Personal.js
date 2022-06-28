@@ -1,9 +1,10 @@
 import React from "react";
 import { Container, Tab, Tabs } from "react-bootstrap";
-import Experience from "../components/Experience";
-import Education from "../components/Education";
+import Experience from "../components/CV/Experience";
+import Education from "../components/CV/Education";
 import { generateData } from "../utils/utils";
-import Skills from "../components/Skills";
+import Skills from "../components/CV/Skills";
+import Papers from "../components/CV/Papers";
 
 const Personal = () => {
   const data = generateData();
@@ -30,6 +31,9 @@ const Personal = () => {
               outerRadius={100}
             />
           </Container>
+        </Tab>
+        <Tab eventKey="papers" title="Papers">
+          <Papers />
         </Tab>
       </Tabs>
     </Container>

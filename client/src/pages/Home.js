@@ -7,9 +7,9 @@ const Home = () => {
     <Container>
       <Card className="text-center">
         <Card.Body>
-          <Card.Title>D3 PieChart Example</Card.Title>
+          <Card.Title>D3 Scatter plot Example</Card.Title>
           <Card.Text>
-            This Example just show how the pieChart works in D3
+            This Example just show how to create a scatter plot in D3
           </Card.Text>
           <Link to="/piechart">
             <Button variant="dark">Go to Page</Button>

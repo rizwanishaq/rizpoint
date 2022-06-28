@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
+import Header from "./components/layouts/Header";
 import Home from "./pages/Home";
 import Personal from "./pages/Personal";
 import ScatterPlot from "./pages/ScatterPlot";

@@ -1,9 +1,9 @@
 import React from "react";
 import { scaleLinear, scaleOrdinal, format, extent } from "d3";
 import { useData } from "../hooks/useData";
-import { AxisBottom } from "../utils/AxisBottom";
-import { AxisLeft } from "../utils/AxisLeft";
-import { Marks } from "../utils/Marks";
+import { AxisBottom } from "../components/ScatterPlot/AxisBottom";
+import { AxisLeft } from "../components/ScatterPlot/AxisLeft";
+import { Marks } from "../components/ScatterPlot/Marks";
 
 const width = 960;
 const height = 500;
