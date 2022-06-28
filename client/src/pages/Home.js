@@ -16,6 +16,16 @@ const Home = () => {
           </Link>
         </Card.Body>
       </Card>
+
+      <Card className="text-center">
+        <Card.Body>
+          <Card.Title>Visx bar plot</Card.Title>
+          <Card.Text>This Example just show how we can use Visx</Card.Text>
+          <Link to="/simple">
+            <Button variant="dark">Go to Page</Button>
+          </Link>
+        </Card.Body>
+      </Card>
     </Container>
   );
 };
