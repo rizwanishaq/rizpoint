@@ -10,11 +10,11 @@ const Home = () => {
         text={"This Example just show how to create a scatter plot in D3"}
         link={"/piechart"}
       />
-      <BlogCard
+      {/* <BlogCard
         title={"Visx bar plot"}
         text={"This Example just show how we can use Visx"}
         link={"/simple"}
-      />
+      /> */}
       <BlogCard
         title={"Visx PieChart"}
         text={"PieChart example from VisX"}
@@ -24,6 +24,11 @@ const Home = () => {
         title={"ApexChart"}
         text={"ApexChart example from ApexCharts"}
         link={"/apexchart"}
+      />
+      <BlogCard
+        title={"ReChart"}
+        text={"ReChart example from ReChart"}
+        link={"/rechart"}
       />
     </Container>
   );

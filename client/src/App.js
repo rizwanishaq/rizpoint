@@ -5,8 +5,9 @@ import PieExample from "./pages/PieExample";
 import Home from "./pages/Home";
 import Personal from "./pages/Personal";
 import ScatterPlot from "./pages/ScatterPlot";
-import VisxExample from "./pages/VisxExample";
+// import VisxExample from "./pages/VisxExample";
 import ApexChart from "./pages/ApexChart";
+import ReChartExample from "./pages/ReChartExample";
 
 function App() {
   return (
@@ -16,12 +17,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<Personal />} />
         <Route path="/piechart" element={<ScatterPlot />} />
-        <Route
+        {/* <Route
           path="/simple"
           element={<VisxExample width={900} height={500} />}
-        />
+        /> */}
         <Route path="/pies" element={<PieExample />} />
         <Route path="/apexchart" element={<ApexChart />} />
+        <Route path="/rechart" element={<ReChartExample />} />
       </Routes>
     </>
   );
