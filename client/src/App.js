@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Personal from "./pages/Personal";
 import ScatterPlot from "./pages/ScatterPlot";
 import VisxExample from "./pages/VisxExample";
+import ApexChart from "./pages/ApexChart";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           element={<VisxExample width={900} height={500} />}
         />
         <Route path="/pies" element={<PieExample />} />
+        <Route path="/apexchart" element={<ApexChart />} />
       </Routes>
     </>
   );
