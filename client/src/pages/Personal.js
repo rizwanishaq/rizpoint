@@ -5,6 +5,7 @@ import Education from "../components/CV/Education";
 import { generateData } from "../utils/utils";
 import Skills from "../components/CV/Skills";
 import Papers from "../components/CV/Papers";
+import PythonSkills from "../components/CV/PythonSkills";
 
 const Personal = () => {
   const data = generateData();
@@ -23,13 +24,24 @@ const Personal = () => {
         </Tab>
         <Tab eventKey="skill" title="Skills">
           <Container>
-            <Skills
-              data={data}
-              width={200}
-              height={200}
-              innerRadius={40}
-              outerRadius={100}
-            />
+            <Tabs
+              defaultActiveKey="skills-pie"
+              id="skills-pie-example"
+              className="mb-3"
+            >
+              <Tab eventKey="skill-pie" title="Skills-tab">
+                <Skills
+                  data={data}
+                  width={200}
+                  height={200}
+                  innerRadius={40}
+                  outerRadius={100}
+                />
+              </Tab>
+              <Tab eventKey="databases" title="databases">
+                <PythonSkills />
+              </Tab>
+            </Tabs>
           </Container>
         </Tab>
         <Tab eventKey="papers" title="Papers">
