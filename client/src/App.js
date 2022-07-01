@@ -8,6 +8,7 @@ import ScatterPlot from "./pages/ScatterPlot";
 // import VisxExample from "./pages/VisxExample";
 import ApexChart from "./pages/ApexChart";
 import ReChartExample from "./pages/ReChartExample";
+import WorkOuts from "./pages/WorkOuts";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/pies" element={<PieExample />} />
         <Route path="/apexchart" element={<ApexChart />} />
         <Route path="/rechart" element={<ReChartExample />} />
+        <Route path="/workouts" element={<WorkOuts />} />
       </Routes>
     </>
   );

@@ -6,6 +6,11 @@ const Home = () => {
   return (
     <Container>
       <BlogCard
+        title={"Workout"}
+        text={"Workout connected to backend-with mongodb"}
+        link={"/workouts"}
+      />
+      <BlogCard
         title={"D3 Scatter plot Example"}
         text={"This Example just show how to create a scatter plot in D3"}
         link={"/piechart"}
