@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 const WorkOutForm = () => {
   const [error, setError] = useState("");
@@ -25,10 +26,14 @@ const WorkOutForm = () => {
       setError(json.error);
     }
     if (response.ok) {
+      toast.success("Data is added to the database");
       setError("");
       reset();
     }
   };
+  if (error) {
+    toast.error(error);
+  }
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <Form.Group className="mb-3">
