@@ -1,0 +1,60 @@
+# My Variables
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWU4ZDk1N2YyMDBhYTcyNjUyMWU0YzI1In0sImlhdCI6MTU4NjMzODcxNywiZXhwIjoxNTg2Njk4NzE3fQ.ChR446yYuA-D-w6cdYDDkH4WV65kYUNYHBoWg_7TIJ0
+### Get request (auth)
+GET http://localhost:5000/api/workouts/
+
+### Get contact
+GET http://localhost:5000/api/workouts/62bed0b22137510e9b5deff6
+
+
+
+### Register User
+POST http://localhost:5000/api/workouts/
+Content-Type: application/json
+
+{
+   "title": "workbench1",
+   "reps": 23,
+   "load":50
+}
+
+### Register User
+PATCH  http://localhost:5000/api/workouts/62bed0b22137510e9b5deff6
+Content-Type: application/json
+
+{
+   "title": "updated goal"
+}
+
+
+### loginuser
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+   "email": "whatever@gmail.com",
+   "password": "1234567"
+}
+
+
+### loginuser
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+   "email": "whatever1@gmail.com",
+   "password": "1234567"
+}
+
+
+### Login User
+POST http://localhost:5000/api/auth
+Content-Type: application/json
+
+{
+   "email": "whatever@gmail.com",
+   "password": "1234567"
+}
+
+### Delete
+Delete http://localhost:5000/api/workouts/62bed0a52137510e9b5deff4
