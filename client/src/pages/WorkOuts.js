@@ -18,7 +18,7 @@ const WorkOuts = () => {
     };
 
     fetchWorkouts();
-  }, []);
+  }, [dispatch]);
   return (
     <Container>
       <Row>

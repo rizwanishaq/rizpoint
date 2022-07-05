@@ -3,6 +3,7 @@ import { Card, Col } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { useWorkoutsContext } from "../../hooks/useWorkoutsContext";
 import { AiFillDelete } from "react-icons/ai";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 const WorkOutDetail = ({ workout }) => {
   const { dispatch } = useWorkoutsContext();
@@ -39,7 +40,11 @@ const WorkOutDetail = ({ workout }) => {
               <strong>Reps: </strong>
               {workout.reps}
             </p>
-            <p>{workout.createdAt}</p>
+            <p>
+              {formatDistanceToNow(new Date(workout.createdAt), {
+                addSuffix: true,
+              })}
+            </p>
             <AiFillDelete onClick={handleClick} />
           </Card.Text>
         </Card.Body>
