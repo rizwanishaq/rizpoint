@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
 import { toast } from "react-toastify";
+import { useWorkoutsContext } from "../../hooks/useWorkoutsContext";
 
 const WorkOutForm = () => {
+  const { dispatch } = useWorkoutsContext();
+
   const [error, setError] = useState("");
   const {
     register,
@@ -29,6 +32,7 @@ const WorkOutForm = () => {
       toast.success("Data is added to the database");
       setError("");
       reset();
+      dispatch({ type: "CREATE_WORKOUT", payload: json });
     }
   };
   if (error) {
