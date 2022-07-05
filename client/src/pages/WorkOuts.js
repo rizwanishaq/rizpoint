@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import WorkOutDetail from "../components/WorkOut/WorkOutDetail";
 import WorkOutForm from "../components/WorkOut/WorkOutForm";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
@@ -22,13 +22,15 @@ const WorkOuts = () => {
   return (
     <Container>
       <Row>
-        {workouts &&
-          workouts.map((workout) => (
-            <WorkOutDetail key={workout._id} workout={workout} />
-          ))}
-      </Row>
-      <Row>
-        <WorkOutForm />
+        <Col>
+          <WorkOutForm />
+        </Col>
+        <Col>
+          {workouts &&
+            workouts.map((workout) => (
+              <WorkOutDetail key={workout._id} workout={workout} />
+            ))}
+        </Col>
       </Row>
     </Container>
   );

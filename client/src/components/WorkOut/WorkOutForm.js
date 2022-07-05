@@ -39,7 +39,7 @@ const WorkOutForm = () => {
     toast.error(error);
   }
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form className="mt-3" onSubmit={handleSubmit(onSubmit)}>
       <Form.Group className="mb-3">
         <Form.Label>Title</Form.Label>
         <Form.Control type="text" {...register("title", { required: true })} />
@@ -81,7 +81,7 @@ const WorkOutForm = () => {
         </Form.Text>
       </Form.Group>
       <Button variant="primary" type="submit">
-        Submit
+        Add a new workout
       </Button>
     </Form>
   );

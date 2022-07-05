@@ -27,29 +27,27 @@ const WorkOutDetail = ({ workout }) => {
   };
 
   return (
-    <Col>
-      <Card>
-        <Card.Body>
-          <Card.Title>{workout.title}</Card.Title>
-          <Card.Text>
-            <p>
-              <strong>Load (kg): </strong>
-              {workout.load}
-            </p>
-            <p>
-              <strong>Reps: </strong>
-              {workout.reps}
-            </p>
-            <p>
-              {formatDistanceToNow(new Date(workout.createdAt), {
-                addSuffix: true,
-              })}
-            </p>
-            <AiFillDelete onClick={handleClick} />
-          </Card.Text>
-        </Card.Body>
-      </Card>
-    </Col>
+    <Card border="success" className="text-center mb-3">
+      <Card.Body>
+        <Card.Header>{workout.title}</Card.Header>
+        <Card.Text>
+          <p>
+            <strong>Load (kg): </strong>
+            {workout.load}
+          </p>
+          <p>
+            <strong>Reps: </strong>
+            {workout.reps}
+          </p>
+          <AiFillDelete onClick={handleClick} />
+        </Card.Text>
+      </Card.Body>
+      <Card.Footer className="text-muted">
+        {formatDistanceToNow(new Date(workout.createdAt), {
+          addSuffix: true,
+        })}
+      </Card.Footer>
+    </Card>
   );
 };
 
