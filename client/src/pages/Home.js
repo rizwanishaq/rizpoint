@@ -35,6 +35,12 @@ const Home = () => {
         text={"ReChart example from ReChart"}
         link={"/rechart"}
       />
+
+      <BlogCard
+        title={"Image Preview Example"}
+        text={"Just random task of image preview"}
+        link={"/imagepreview"}
+      />
     </Container>
   );
 };
