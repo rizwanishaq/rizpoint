@@ -10,6 +10,7 @@ import ApexChart from "./pages/ApexChart";
 import ReChartExample from "./pages/ReChartExample";
 import WorkOuts from "./pages/WorkOuts";
 import ImagePreview from "./pages/ImagePreview";
+import ExpenseTracker from "./pages/ExpenseTracker";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/rechart" element={<ReChartExample />} />
         <Route path="/workouts" element={<WorkOuts />} />
         <Route path="/imagepreview" element={<ImagePreview />} />
+        <Route path="/expensetracker" element={<ExpenseTracker />} />
       </Routes>
     </>
   );
