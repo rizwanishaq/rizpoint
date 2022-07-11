@@ -9,15 +9,20 @@ import "./index.css";
 import App from "./App";
 import WorkoutContextProvider from "./contexts/workout/WorkoutContext";
 import ExpenseTrackerContextProvider from "./contexts/expensetracker/ExpenseTrackerContext";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <ToastContainer />
-    <ExpenseTrackerContextProvider>
-      <WorkoutContextProvider>
-        <App />
-      </WorkoutContextProvider>
-    </ExpenseTrackerContextProvider>
+    <QueryClientProvider client={queryClient}>
+      <ExpenseTrackerContextProvider>
+        <WorkoutContextProvider>
+          <App />
+        </WorkoutContextProvider>
+      </ExpenseTrackerContextProvider>
+    </QueryClientProvider>
   </BrowserRouter>
 );

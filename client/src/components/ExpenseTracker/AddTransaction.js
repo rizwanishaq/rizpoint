@@ -7,12 +7,7 @@ import { useExpenseTrackerContext } from "../../hooks/useExpenseTrackerContext";
 
 const AddTransaction = () => {
   const { dispatch } = useExpenseTrackerContext();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = async (data) => {
     data._id = uuid();

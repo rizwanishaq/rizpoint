@@ -48,11 +48,20 @@ const Home = () => {
             link={"/imagepreview"}
           />
         </Col>
+
         <Col>
           <BlogCard
             title={"Expense Tracker"}
             text={"Expense Tracker example"}
             link={"/expensetracker"}
+          />
+        </Col>
+
+        <Col>
+          <BlogCard
+            title={"Covid Tracker"}
+            text={"Covid Tracker example from CovidTracker"}
+            link={"/covidtracker"}
           />
         </Col>
       </Row>

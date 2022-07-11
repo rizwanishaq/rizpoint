@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { useWorkoutsContext } from "../../hooks/useWorkoutsContext";
 import { AiFillDelete } from "react-icons/ai";
