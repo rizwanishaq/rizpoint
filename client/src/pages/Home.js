@@ -64,6 +64,13 @@ const Home = () => {
             link={"/covidtracker"}
           />
         </Col>
+        <Col>
+          <BlogCard
+            title={"Real Time Chart"}
+            text={"Real Time Chart example from using websocket"}
+            link={"/realtimechart"}
+          />
+        </Col>
       </Row>
     </Container>
   );

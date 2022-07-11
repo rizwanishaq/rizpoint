@@ -12,6 +12,7 @@ import WorkOuts from "./pages/WorkOuts";
 import ImagePreview from "./pages/ImagePreview";
 import ExpenseTracker from "./pages/ExpenseTracker";
 import CovidTracker from "./pages/CovidTracker";
+import RealTimeChart from "./pages/RealTimeChart";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/imagepreview" element={<ImagePreview />} />
         <Route path="/expensetracker" element={<ExpenseTracker />} />
         <Route path="/covidtracker" element={<CovidTracker />} />
+        <Route path="/realtimechart" element={<RealTimeChart />} />
       </Routes>
     </>
   );
