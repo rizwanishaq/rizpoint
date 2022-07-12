@@ -71,6 +71,13 @@ const Home = () => {
             link={"/realtimechart"}
           />
         </Col>
+        <Col>
+          <BlogCard
+            title={"Firebase Tutorial"}
+            text={"Firebase Tutorial example"}
+            link={"/firebasetutorial"}
+          />
+        </Col>
       </Row>
     </Container>
   );
