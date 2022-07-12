@@ -78,6 +78,13 @@ const Home = () => {
             link={"/firebasetutorial"}
           />
         </Col>
+        <Col>
+          <BlogCard
+            title={"Real Time Chart with ApexChart"}
+            text={"Real Time Chart example from ApexChart"}
+            link={"/realtimeapexchart"}
+          />
+        </Col>
       </Row>
     </Container>
   );
