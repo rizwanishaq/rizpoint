@@ -85,6 +85,13 @@ const Home = () => {
             link={"/realtimeapexchart"}
           />
         </Col>
+        <Col>
+          <BlogCard
+            title={"Voice Control System"}
+            text={"Voice Control System example"}
+            link={"/voicecontrolsystem"}
+          />
+        </Col>
       </Row>
     </Container>
   );
