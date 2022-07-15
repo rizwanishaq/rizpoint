@@ -5,6 +5,8 @@ import { toast } from "react-toastify";
 import { Container, Row, Col, ListGroup } from "react-bootstrap";
 import { FaMicrophoneAlt, FaMicrophoneSlash } from "react-icons/fa";
 
+// ref: https://stackoverflow.com/questions/63761550/cannot-load-tensorflow-models-speech-commands
+
 const SpeechCommand = () => {
   const [model, setModel] = useState(null);
   const [action, setAction] = useState(null);
