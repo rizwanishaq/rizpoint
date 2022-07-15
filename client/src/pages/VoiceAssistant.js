@@ -1,10 +1,13 @@
-import React from "react";
-import { Button, Container } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Container, Row, Col, ListGroup } from "react-bootstrap";
+import { toast } from "react-toastify";
+import uuid from "react-uuid";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
 import { FaMicrophoneAlt, FaMicrophoneSlash } from "react-icons/fa";
+import VoiceNote from "../components/VoiceNote/VoiceNote";
 
 const VoiceAssistant = () => {
   const {
@@ -12,25 +15,57 @@ const VoiceAssistant = () => {
     listening,
     resetTranscript,
     browserSupportsSpeechRecognition,
+    isMicrophoneAvailable,
   } = useSpeechRecognition();
 
+  const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    if (!listening && transcript !== "") {
+      // Add note to notes array
+      // we can send this to database as well
+      setNotes([...notes, { text: transcript, _id: uuid() }]);
+      resetTranscript();
+    }
+  }, [listening]);
+
   if (!browserSupportsSpeechRecognition) {
-    return <span>Browser doesn't support speech recognition.</span>;
+    return <>{toast.error("Browser doesn't support speech recognition.")}</>;
+  }
+  if (!isMicrophoneAvailable) {
+    return <>{toast.error("Microphone is not available.")}</>;
   }
 
   return (
     <Container className="mt-2 text-center">
-      <p>{listening ? <FaMicrophoneAlt /> : <FaMicrophoneSlash />}</p>
-      <Button onClick={SpeechRecognition.startListening} variant="dark">
-        Start
-      </Button>
-      <Button onClick={SpeechRecognition.stopListening} variant="dark">
-        Stop
-      </Button>
-      <Button onClick={resetTranscript} variant="dark">
-        Reset
-      </Button>
-      <p>{transcript}</p>
+      <h3>Voice Notes</h3>
+      <Row>
+        <Col>
+          <p>{transcript}</p>
+          <p>
+            {listening ? (
+              <FaMicrophoneAlt
+                onClick={() => {
+                  SpeechRecognition.stopListening();
+                }}
+              />
+            ) : (
+              <FaMicrophoneSlash
+                onClick={() =>
+                  SpeechRecognition.startListening({ language: "es-Es" })
+                }
+              />
+            )}
+          </p>
+        </Col>
+        <Col>
+          <ListGroup>
+            {notes.map((note) => (
+              <VoiceNote key={note._id} note={note} />
+            ))}
+          </ListGroup>
+        </Col>
+      </Row>
     </Container>
   );
 };
