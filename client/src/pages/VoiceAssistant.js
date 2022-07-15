@@ -27,6 +27,7 @@ const VoiceAssistant = () => {
       setNotes([...notes, { text: transcript, _id: uuid() }]);
       resetTranscript();
     }
+    // eslint-disable-line
   }, [listening]);
 
   if (!browserSupportsSpeechRecognition) {

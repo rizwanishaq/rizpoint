@@ -92,6 +92,13 @@ const Home = () => {
             link={"/voicecontrolsystem"}
           />
         </Col>
+        <Col>
+          <BlogCard
+            title={"Speech Commands"}
+            text={"Speech Commands example"}
+            link={"/speechcommand"}
+          />
+        </Col>
       </Row>
     </Container>
   );

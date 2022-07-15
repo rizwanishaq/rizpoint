@@ -16,6 +16,7 @@ import RealTimeChart from "./pages/RealTimeChart";
 import SimpleFirebase from "./pages/SimpleFirebase";
 import RealTimeApexChart from "./pages/RealTimeApexChart";
 import VoiceAssistant from "./pages/VoiceAssistant";
+import SpeechCommand from "./pages/SpeechCommand";
 
 function App() {
   return (
@@ -39,7 +40,8 @@ function App() {
         <Route path="/realtimechart" element={<RealTimeChart />} />
         <Route path="/firebasetutorial" element={<SimpleFirebase />} />
         <Route path="/realtimeapexchart" element={<RealTimeApexChart />} />
-        <Route path="//voicecontrolsystem" element={<VoiceAssistant />} />
+        <Route path="/voicecontrolsystem" element={<VoiceAssistant />} />
+        <Route path="/speechcommand" element={<SpeechCommand />} />
       </Routes>
     </>
   );
