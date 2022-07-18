@@ -17,6 +17,21 @@ const RealTimeApexChart = () => {
     chart: {
       id: "basic-bar",
     },
+    responsive: [
+      {
+        breakpoint: 1000,
+        options: {
+          plotOptions: {
+            bar: {
+              horizontal: false,
+            },
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
   };
 
   useEffect(() => {
@@ -36,6 +51,8 @@ const RealTimeApexChart = () => {
       console.log("socket is going to close");
       socket.close();
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -99,6 +99,14 @@ const Home = () => {
             link={"/speechcommand"}
           />
         </Col>
+
+        <Col>
+          <BlogCard
+            title={"Pitch-Detection"}
+            text={"Pitch-Detection example"}
+            link={"/pitchdetection"}
+          />
+        </Col>
       </Row>
     </Container>
   );

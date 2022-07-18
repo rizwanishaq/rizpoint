@@ -17,6 +17,7 @@ import SimpleFirebase from "./pages/SimpleFirebase";
 import RealTimeApexChart from "./pages/RealTimeApexChart";
 import VoiceAssistant from "./pages/VoiceAssistant";
 import SpeechCommand from "./pages/SpeechCommand";
+import PitchDetection from "./pages/PitchDetection";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/realtimeapexchart" element={<RealTimeApexChart />} />
         <Route path="/voicecontrolsystem" element={<VoiceAssistant />} />
         <Route path="/speechcommand" element={<SpeechCommand />} />
+        <Route path="/pitchdetection" element={<PitchDetection />} />
       </Routes>
     </>
   );

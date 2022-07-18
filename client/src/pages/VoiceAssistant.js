@@ -28,6 +28,7 @@ const VoiceAssistant = () => {
       resetTranscript();
     }
     // eslint-disable-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [listening]);
 
   if (!browserSupportsSpeechRecognition) {

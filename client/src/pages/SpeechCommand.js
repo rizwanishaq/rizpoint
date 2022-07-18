@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as tf from "@tensorflow/tfjs";
 import * as speech from "@tensorflow-models/speech-commands";
 import { toast } from "react-toastify";
-import { Container, Row, Col, ListGroup } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { FaMicrophoneAlt, FaMicrophoneSlash } from "react-icons/fa";
 
 // ref: https://stackoverflow.com/questions/63761550/cannot-load-tensorflow-models-speech-commands
