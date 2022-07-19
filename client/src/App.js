@@ -18,7 +18,8 @@ import VoiceAssistant from "./pages/VoiceAssistant";
 import SpeechCommand from "./pages/SpeechCommand";
 import PitchDetection from "./pages/PitchDetection";
 import EventDetection from "./pages/EventDetection";
-import FaceDetection from "./pages/FaceDetection";
+import ImageCapture from "./pages/ImageCapture";
+import CameraDevices from "./pages/CameraDevices";
 
 function App() {
   return (
@@ -46,7 +47,8 @@ function App() {
         <Route path="/speechcommand" element={<SpeechCommand />} />
         <Route path="/pitchdetection" element={<PitchDetection />} />
         <Route path="/eventdetection" element={<EventDetection />} />
-        <Route path="/facedetection" element={<FaceDetection />} />
+        <Route path="/imagecapture" element={<ImageCapture />} />
+        <Route path="/showcameradevices" element={<CameraDevices />} />
       </Routes>
     </>
   );

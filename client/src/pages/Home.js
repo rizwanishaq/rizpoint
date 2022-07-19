@@ -117,9 +117,17 @@ const Home = () => {
         </Col>
         <Col>
           <BlogCard
-            title={"Face-Detection"}
-            text={"Face-Detection example"}
-            link={"/facedetection"}
+            title={"ImageCapture Example"}
+            text={"Image Capture example"}
+            link={"/imagecapture"}
+          />
+        </Col>
+
+        <Col>
+          <BlogCard
+            title={"Camera Devices"}
+            text={"Showing number of devices"}
+            link={"/showcameradevices"}
           />
         </Col>
       </Row>
