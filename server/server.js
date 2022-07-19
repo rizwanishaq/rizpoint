@@ -23,6 +23,7 @@ app.use(cors());
 
 // Routes
 app.use("/api/workouts", require("./routes/workoutsRoutes"));
+app.use("/api/user", require("./routes/userRoutes"));
 app.use(notFound);
 app.use(errorHandler);
 

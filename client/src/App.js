@@ -5,7 +5,6 @@ import PieExample from "./pages/PieExample";
 import Home from "./pages/Home";
 import Personal from "./pages/Personal";
 import ScatterPlot from "./pages/ScatterPlot";
-// import VisxExample from "./pages/VisxExample";
 import ApexChart from "./pages/ApexChart";
 import ReChartExample from "./pages/ReChartExample";
 import WorkOuts from "./pages/WorkOuts";
@@ -18,6 +17,8 @@ import RealTimeApexChart from "./pages/RealTimeApexChart";
 import VoiceAssistant from "./pages/VoiceAssistant";
 import SpeechCommand from "./pages/SpeechCommand";
 import PitchDetection from "./pages/PitchDetection";
+import EventDetection from "./pages/EventDetection";
+import FaceDetection from "./pages/FaceDetection";
 
 function App() {
   return (
@@ -44,6 +45,8 @@ function App() {
         <Route path="/voicecontrolsystem" element={<VoiceAssistant />} />
         <Route path="/speechcommand" element={<SpeechCommand />} />
         <Route path="/pitchdetection" element={<PitchDetection />} />
+        <Route path="/eventdetection" element={<EventDetection />} />
+        <Route path="/facedetection" element={<FaceDetection />} />
       </Routes>
     </>
   );

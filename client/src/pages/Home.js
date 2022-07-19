@@ -107,6 +107,21 @@ const Home = () => {
             link={"/pitchdetection"}
           />
         </Col>
+
+        <Col>
+          <BlogCard
+            title={"Event-Detection"}
+            text={"Event-Detection example"}
+            link={"/eventdetection"}
+          />
+        </Col>
+        <Col>
+          <BlogCard
+            title={"Face-Detection"}
+            text={"Face-Detection example"}
+            link={"/facedetection"}
+          />
+        </Col>
       </Row>
     </Container>
   );
