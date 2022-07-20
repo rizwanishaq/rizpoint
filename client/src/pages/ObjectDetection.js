@@ -20,11 +20,8 @@ const ObjectDetection = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if (model) {
-        predictionFunction();
-      } else {
-        console.log("Model not loaded");
-      }
+      if (!model) return;
+      predictionFunction();
     }, 100);
 
     return () => clearInterval(timer);
