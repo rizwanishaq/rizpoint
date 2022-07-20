@@ -125,9 +125,9 @@ const Home = () => {
 
         <Col>
           <BlogCard
-            title={"Camera Devices"}
-            text={"Showing number of devices"}
-            link={"/showcameradevices"}
+            title={"ObjectDetection"}
+            text={"Object detection using tensorflow js"}
+            link={"/objectdetection"}
           />
         </Col>
       </Row>

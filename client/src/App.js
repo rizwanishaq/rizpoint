@@ -19,7 +19,7 @@ import SpeechCommand from "./pages/SpeechCommand";
 import PitchDetection from "./pages/PitchDetection";
 import EventDetection from "./pages/EventDetection";
 import ImageCapture from "./pages/ImageCapture";
-import CameraDevices from "./pages/CameraDevices";
+import ObjectDetection from "./pages/ObjectDetection";
 
 function App() {
   return (
@@ -48,7 +48,7 @@ function App() {
         <Route path="/pitchdetection" element={<PitchDetection />} />
         <Route path="/eventdetection" element={<EventDetection />} />
         <Route path="/imagecapture" element={<ImageCapture />} />
-        <Route path="/showcameradevices" element={<CameraDevices />} />
+        <Route path="/objectdetection" element={<ObjectDetection />} />
       </Routes>
     </>
   );
