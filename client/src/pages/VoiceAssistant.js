@@ -49,13 +49,15 @@ const VoiceAssistant = () => {
               <FaMicrophoneAlt
                 onClick={() => {
                   SpeechRecognition.stopListening();
+                  toast.error("Stopped listening");
                 }}
               />
             ) : (
               <FaMicrophoneSlash
-                onClick={() =>
-                  SpeechRecognition.startListening({ language: "es-Es" })
-                }
+                onClick={() => {
+                  SpeechRecognition.startListening({ language: "es-Es" });
+                  toast.success("Started listening");
+                }}
               />
             )}
           </p>

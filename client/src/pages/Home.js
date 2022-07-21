@@ -130,6 +130,14 @@ const Home = () => {
             link={"/objectdetection"}
           />
         </Col>
+
+        <Col>
+          <BlogCard
+            title={"FaceDetection"}
+            text={"Face detection example"}
+            link={"/facedetection"}
+          />
+        </Col>
       </Row>
     </Container>
   );
