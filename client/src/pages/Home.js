@@ -138,6 +138,20 @@ const Home = () => {
             link={"/facedetection"}
           />
         </Col>
+        <Col>
+          <BlogCard
+            title={"MermaidJs"}
+            text={"MermaidJs example"}
+            link={"/mermaidjs"}
+          />
+        </Col>
+        <Col>
+          <BlogCard
+            title={"Search"}
+            text={"Search Text example"}
+            link={"/search"}
+          />
+        </Col>
       </Row>
     </Container>
   );
