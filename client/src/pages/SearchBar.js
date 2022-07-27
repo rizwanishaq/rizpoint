@@ -1,4 +1,3 @@
-import { set } from "date-fns";
 import React, { useState, useEffect } from "react";
 import { getPosts } from "../api/axios";
 import { Button, Container, Form } from "react-bootstrap";
@@ -9,20 +8,11 @@ const SearchBar = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    getPosts()
-      .then((json) => {
-        setPosts(json);
-        console.log(json);
-        return json;
-      })
-      .then((json) => {
-        setSearchResults(json);
-      });
+    getPosts().then((json) => {
+      setPosts(json);
+      setSearchResults(json);
+    });
   }, []);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
 
   const handleSearchChange = (e) => {
     if (!e.target.value) return setSearchResults(posts);
@@ -37,7 +27,7 @@ const SearchBar = () => {
 
   return (
     <Container>
-      <Form onSubmit={handleSubmit} className="mt-2 mb-3 d-flex">
+      <Form onSubmit={(e) => e.preventDefault()} className="mt-2 mb-3 d-flex">
         <Form.Control
           type="search"
           placeholder="search results"
@@ -45,7 +35,6 @@ const SearchBar = () => {
         />
         <Button variant="outline-success">Search</Button>
       </Form>
-
       {searchResults &&
         searchResults.map((post) => <SearchCard key={post.id} post={post} />)}
     </Container>

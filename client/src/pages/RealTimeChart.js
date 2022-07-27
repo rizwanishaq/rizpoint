@@ -13,6 +13,11 @@ const RealTimeChart = () => {
     socket.on("cpu", (cpuPercent) => {
       setData((prevState) => [...prevState, cpuPercent]);
     });
+
+    return () => {
+      socket.disconnect();
+      console.log("disconnected");
+    };
   }, []);
 
   return (

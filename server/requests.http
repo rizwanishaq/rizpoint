@@ -32,17 +32,17 @@ POST http://localhost:5000/api/user/login
 Content-Type: application/json
 
 {
-   "email": "whatever@gmail.com",
-   "password": "1234567"
+   "email": "abc@gmailsdww.com",
+   "password": "ABCabc123!"
 }
 
 
-### loginuser
+### signupuser
 POST http://localhost:5000/api/user/signup
 Content-Type: application/json
 
 {
-   "email": "abc@gmail.com",
+   "email": "abc@gmailsdww.com",
    "password": "ABCabc123!"
 }
 
