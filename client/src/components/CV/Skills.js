@@ -1,5 +1,7 @@
 import React from "react";
 import * as d3 from "d3";
+import { Col } from "react-bootstrap";
+import PythonSkills from "./PythonSkills";
 
 const Arc = ({ data, index, createArc, colors, skill }) => (
   <g key={index} className="arc">
@@ -30,29 +32,36 @@ const Skills = (props) => {
   const data = createPie(props.data);
 
   return (
-    <svg width={props.width} height={props.height}>
-      <g transform={`translate(${props.outerRadius} ${props.outerRadius})`}>
-        {data.map((d, i) => (
-          <Arc
-            key={i}
-            data={d}
-            index={i}
-            createArc={createArc}
-            colors={colors}
-            skill={skills[i]}
-          />
-        ))}
-        <text
-          textAnchor="inside"
-          alignmentBaseline="middle"
-          fill="black"
-          fontSize="20"
-          dx={"-1em"}
-        >
-          Skills
-        </text>
-      </g>
-    </svg>
+    <>
+      <Col>
+        <svg width={props.width} height={props.height}>
+          <g transform={`translate(${props.outerRadius} ${props.outerRadius})`}>
+            {data.map((d, i) => (
+              <Arc
+                key={i}
+                data={d}
+                index={i}
+                createArc={createArc}
+                colors={colors}
+                skill={skills[i]}
+              />
+            ))}
+            <text
+              textAnchor="inside"
+              alignmentBaseline="middle"
+              fill="black"
+              fontSize="20"
+              dx={"-1em"}
+            >
+              Skills
+            </text>
+          </g>
+        </svg>
+      </Col>
+      <Col>
+        <PythonSkills />
+      </Col>
+    </>
   );
 };
 

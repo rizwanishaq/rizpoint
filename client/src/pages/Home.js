@@ -1,158 +1,149 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import BlogCard from "../components/Blog/BlogCard";
+import { Container, ListGroup } from "react-bootstrap";
+import BlogLink from "../components/Blog/BlogLink";
 
 const Home = () => {
   return (
     <Container className="mt-3">
-      <Row>
-        <Col>
-          <BlogCard
-            title={"Workout"}
-            text={"Workout connected to backend-with mongodb"}
-            link={"/workouts"}
-          />
-        </Col>
-        <Col>
-          <BlogCard
-            title={"D3 Scatter plot Example"}
-            text={"This Example just show how to create a scatter plot in D3"}
-            link={"/piechart"}
-          />
-        </Col>
-        <Col>
-          <BlogCard
-            title={"Visx PieChart"}
-            text={"PieChart example from VisX"}
-            link={"/pies"}
-          />
-        </Col>
-        <Col>
-          <BlogCard
-            title={"ApexChart"}
-            text={"ApexChart example from ApexCharts"}
-            link={"/apexchart"}
-          />
-        </Col>
-        <Col>
-          <BlogCard
-            title={"ReChart"}
-            text={"ReChart example from ReChart"}
-            link={"/rechart"}
-          />
-        </Col>
-        <Col>
-          <BlogCard
-            title={"Image Preview Example"}
-            text={"Just random task of image preview"}
-            link={"/imagepreview"}
-          />
-        </Col>
+      <ListGroup>
+        <BlogLink
+          key={"workout"}
+          title={"Workout"}
+          text={"Workout connected to backend-with mongodb"}
+          link={"/workouts"}
+        />
+        <BlogLink
+          key={"D3 Scatter plot Example"}
+          title={"D3 Scatter plot Example"}
+          text={"This Example just show how to create a scatter plot in D3"}
+          link={"/piechart"}
+        />
+        <BlogLink
+          key={"Visx PieChart"}
+          title={"Visx PieChart"}
+          text={"PieChart example from VisX"}
+          link={"/pies"}
+        />
 
-        <Col>
-          <BlogCard
-            title={"Expense Tracker"}
-            text={"Expense Tracker example"}
-            link={"/expensetracker"}
-          />
-        </Col>
+        <BlogLink
+          key={"ApexChart"}
+          title={"ApexChart"}
+          text={"ApexChart example from ApexCharts"}
+          link={"/apexchart"}
+        />
 
-        <Col>
-          <BlogCard
-            title={"Covid Tracker"}
-            text={"Covid Tracker example from CovidTracker"}
-            link={"/covidtracker"}
-          />
-        </Col>
-        <Col>
-          <BlogCard
-            title={"Real Time Chart"}
-            text={"Real Time Chart example from using websocket"}
-            link={"/realtimechart"}
-          />
-        </Col>
-        <Col>
-          <BlogCard
-            title={"Firebase Tutorial"}
-            text={"Firebase Tutorial example"}
-            link={"/firebasetutorial"}
-          />
-        </Col>
-        <Col>
-          <BlogCard
-            title={"Real Time Chart with ApexChart"}
-            text={"Real Time Chart example from ApexChart"}
-            link={"/realtimeapexchart"}
-          />
-        </Col>
-        <Col>
-          <BlogCard
-            title={"Voice Control System"}
-            text={"Voice Control System example"}
-            link={"/voicecontrolsystem"}
-          />
-        </Col>
-        <Col>
-          <BlogCard
-            title={"Speech Commands"}
-            text={"Speech Commands example"}
-            link={"/speechcommand"}
-          />
-        </Col>
+        <BlogLink
+          key={"ReChart"}
+          title={"ReChart"}
+          text={"ReChart example from ReChart"}
+          link={"/rechart"}
+        />
 
-        <Col>
-          <BlogCard
-            title={"Pitch-Detection"}
-            text={"Pitch-Detection example"}
-            link={"/pitchdetection"}
-          />
-        </Col>
+        <BlogLink
+          key={"Image Preview Example"}
+          title={"Image Preview Example"}
+          text={"Just random task of image preview"}
+          link={"/imagepreview"}
+        />
 
-        <Col>
-          <BlogCard
-            title={"Event-Detection"}
-            text={"Event-Detection example"}
-            link={"/eventdetection"}
-          />
-        </Col>
-        <Col>
-          <BlogCard
-            title={"ImageCapture Example"}
-            text={"Image Capture example"}
-            link={"/imagecapture"}
-          />
-        </Col>
+        <BlogLink
+          key={"Expense Tracker"}
+          title={"Expense Tracker"}
+          text={"Expense Tracker example"}
+          link={"/expensetracker"}
+        />
 
-        <Col>
-          <BlogCard
-            title={"ObjectDetection"}
-            text={"Object detection using tensorflow js"}
-            link={"/objectdetection"}
-          />
-        </Col>
+        <BlogLink
+          key={"Covid Tracker"}
+          title={"Covid Tracker"}
+          text={"Covid Tracker example from CovidTracker"}
+          link={"/covidtracker"}
+        />
 
-        <Col>
-          <BlogCard
-            title={"FaceDetection"}
-            text={"Face detection example"}
-            link={"/facedetection"}
-          />
-        </Col>
-        <Col>
-          <BlogCard
-            title={"MermaidJs"}
-            text={"MermaidJs example"}
-            link={"/mermaidjs"}
-          />
-        </Col>
-        <Col>
-          <BlogCard
-            title={"Search"}
-            text={"Search Text example"}
-            link={"/search"}
-          />
-        </Col>
-      </Row>
+        <BlogLink
+          key={"Real Time Chart"}
+          title={"Real Time Chart"}
+          text={"Real Time Chart example from using websocket"}
+          link={"/realtimechart"}
+        />
+
+        <BlogLink
+          key={"Firebase Tutorial"}
+          title={"Firebase Tutorial"}
+          text={"Firebase Tutorial example"}
+          link={"/firebasetutorial"}
+        />
+
+        <BlogLink
+          key={"Real Time Chart with ApexChart"}
+          title={"Real Time Chart with ApexChart"}
+          text={"Real Time Chart example from ApexChart"}
+          link={"/realtimeapexchart"}
+        />
+
+        <BlogLink
+          key={"Voice Control System"}
+          title={"Voice Control System"}
+          text={"Voice Control System example"}
+          link={"/voicecontrolsystem"}
+        />
+
+        <BlogLink
+          key={"Speech Commands"}
+          title={"Speech Commands"}
+          text={"Speech Commands example"}
+          link={"/speechcommand"}
+        />
+
+        <BlogLink
+          key={"Pitch-Detection"}
+          title={"Pitch-Detection"}
+          text={"Pitch-Detection example"}
+          link={"/pitchdetection"}
+        />
+
+        <BlogLink
+          key={"Event-Detection"}
+          title={"Event-Detection"}
+          text={"Event-Detection example"}
+          link={"/eventdetection"}
+        />
+
+        <BlogLink
+          key={"ImageCapture Example"}
+          title={"ImageCapture Example"}
+          text={"Image Capture example"}
+          link={"/imagecapture"}
+        />
+
+        <BlogLink
+          key={"ObjectDetection"}
+          title={"ObjectDetection"}
+          text={"Object detection using tensorflow js"}
+          link={"/objectdetection"}
+        />
+
+        <BlogLink
+          key={"FaceDetection"}
+          title={"FaceDetection"}
+          text={"Face detection example"}
+          link={"/facedetection"}
+        />
+
+        <BlogLink
+          key={"MermaidJs"}
+          title={"MermaidJs"}
+          text={"MermaidJs example"}
+          link={"/mermaidjs"}
+        />
+
+        <BlogLink
+          key={"Search"}
+          title={"Search"}
+          text={"Search Text example"}
+          link={"/search"}
+        />
+      </ListGroup>
     </Container>
   );
 };

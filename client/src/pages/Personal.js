@@ -5,7 +5,6 @@ import Education from "../components/CV/Education";
 import { generateData } from "../utils/utils";
 import Skills from "../components/CV/Skills";
 import Papers from "../components/CV/Papers";
-import PythonSkills from "../components/CV/PythonSkills";
 
 const Personal = () => {
   const data = generateData();
@@ -37,9 +36,6 @@ const Personal = () => {
                   innerRadius={40}
                   outerRadius={100}
                 />
-              </Tab>
-              <Tab eventKey="databases" title="databases">
-                <PythonSkills />
               </Tab>
             </Tabs>
           </Container>
