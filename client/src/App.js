@@ -22,6 +22,7 @@ import ImageCapture from "./pages/ImageCapture";
 import ObjectDetection from "./pages/ObjectDetection";
 import FaceDetection from "./pages/FaceDetection";
 import SearchBar from "./pages/SearchBar";
+import UploadImage from "./pages/UploadImage";
 // import MermaidExample from "./pages/MermaidExample";
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
         <Route path="/objectdetection" element={<ObjectDetection />} />
         <Route path="/facedetection" element={<FaceDetection />} />
         <Route path="/search" element={<SearchBar />} />
+        <Route path="/uploadimage" element={<UploadImage />} />
         {/* <Route path="/mermaidjs" element={<MermaidExample />} /> */}
       </Routes>
     </>

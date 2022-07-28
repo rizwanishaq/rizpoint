@@ -136,12 +136,17 @@ const Home = () => {
           text={"MermaidJs example"}
           link={"/mermaidjs"}
         />
-
         <BlogLink
           key={"Search"}
           title={"Search"}
           text={"Search Text example"}
           link={"/search"}
+        />
+        <BlogLink
+          key={"UploadImage"}
+          title={"UploadImage"}
+          text={"Upload Image example"}
+          link={"/uploadimage"}
         />
       </ListGroup>
     </Container>
