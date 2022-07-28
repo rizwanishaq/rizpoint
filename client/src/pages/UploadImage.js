@@ -3,7 +3,15 @@ import { storage } from "../firebase-config";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
 import { toast } from "react-toastify";
-import { Container, Row, Col, Button, Form, InputGroup } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Form,
+  InputGroup,
+  Carousel,
+} from "react-bootstrap";
 
 const UploadImage = () => {
   const [imageUpload, setImageUpload] = useState(null);
@@ -38,15 +46,16 @@ const UploadImage = () => {
 
   return (
     <Container className="mt-2 text-center">
-      <Row className="mt-2 mb-2">
-        <Col>
-          {imageList.map((url) => {
-            return <img src={url} key={url} />;
-          })}
-        </Col>
-      </Row>
-
-      <InputGroup className="mb-3">
+      <Carousel variant="dark">
+        {imageList.map((url, idx) => {
+          return (
+            <Carousel.Item key={`${url}-${idx}`}>
+              <img src={url} key={url} className="w-10" />
+            </Carousel.Item>
+          );
+        })}
+      </Carousel>
+      <InputGroup className="mb-3 mt-3">
         <Form.Control
           type="file"
           onChange={(e) => setImageUpload(e.target.files[0])}
