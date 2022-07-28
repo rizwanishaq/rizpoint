@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getPosts } from "../api/axios";
-import { Button, Container, Form } from "react-bootstrap";
+import { Button, Container, Form, InputGroup } from "react-bootstrap";
 import SearchCard from "../components/Search/SearchCard";
 
 const SearchBar = () => {
@@ -27,13 +27,15 @@ const SearchBar = () => {
 
   return (
     <Container>
-      <Form onSubmit={(e) => e.preventDefault()} className="mt-2 mb-3 d-flex">
-        <Form.Control
-          type="search"
-          placeholder="search results"
-          onChange={handleSearchChange}
-        />
-        <Button variant="outline-success">Search</Button>
+      <Form onSubmit={(e) => e.preventDefault()} className="mt-2 mb-3">
+        <InputGroup>
+          <Form.Control
+            type="search"
+            placeholder="search results"
+            onChange={handleSearchChange}
+          />
+          <Button variant="outline-success">Search</Button>
+        </InputGroup>
       </Form>
       {searchResults &&
         searchResults.map((post) => <SearchCard key={post.id} post={post} />)}

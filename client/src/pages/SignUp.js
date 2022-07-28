@@ -12,9 +12,7 @@ const SignUp = () => {
 
   return (
     <Container className="mb-3 ">
-      <h3 className="mt-3">Signup</h3>
-
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmit)} className="mt-3">
         <Form.Group className="mb-3">
           <Form.Label>Email</Form.Label>
           <Form.Control
