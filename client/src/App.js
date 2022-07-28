@@ -23,6 +23,8 @@ import ObjectDetection from "./pages/ObjectDetection";
 import FaceDetection from "./pages/FaceDetection";
 import SearchBar from "./pages/SearchBar";
 import UploadImage from "./pages/UploadImage";
+import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
 // import MermaidExample from "./pages/MermaidExample";
 
 function App() {
@@ -56,6 +58,8 @@ function App() {
         <Route path="/facedetection" element={<FaceDetection />} />
         <Route path="/search" element={<SearchBar />} />
         <Route path="/uploadimage" element={<UploadImage />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
         {/* <Route path="/mermaidjs" element={<MermaidExample />} /> */}
       </Routes>
     </>

@@ -148,6 +148,18 @@ const Home = () => {
           text={"Upload Image example"}
           link={"/uploadimage"}
         />
+        <BlogLink
+          key={"SignUp"}
+          title={"SignUp"}
+          text={"SignUp example"}
+          link={"/signup"}
+        />
+        <BlogLink
+          key={"SignIn"}
+          title={"SignIn"}
+          text={"SignIn example"}
+          link={"/signin"}
+        />
       </ListGroup>
     </Container>
   );
