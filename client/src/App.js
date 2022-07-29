@@ -25,6 +25,7 @@ import SearchBar from "./pages/SearchBar";
 import UploadImage from "./pages/UploadImage";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
+import GeoLocation from "./pages/GeoLocation";
 // import MermaidExample from "./pages/MermaidExample";
 
 function App() {
@@ -60,6 +61,8 @@ function App() {
         <Route path="/uploadimage" element={<UploadImage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/geolocation" element={<GeoLocation />} />
+
         {/* <Route path="/mermaidjs" element={<MermaidExample />} /> */}
       </Routes>
     </>

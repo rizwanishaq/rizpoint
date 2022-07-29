@@ -3,15 +3,7 @@ import { storage } from "../firebase-config";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
 import { toast } from "react-toastify";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Form,
-  InputGroup,
-  Carousel,
-} from "react-bootstrap";
+import { Container, Button, Form, InputGroup, Carousel } from "react-bootstrap";
 
 const UploadImage = () => {
   const [imageUpload, setImageUpload] = useState(null);

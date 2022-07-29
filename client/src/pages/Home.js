@@ -160,6 +160,12 @@ const Home = () => {
           text={"SignIn example"}
           link={"/signin"}
         />
+        <BlogLink
+          key={"GeoLocation"}
+          title={"GeoLocation"}
+          text={"GeoLocation example"}
+          link={"/geolocation"}
+        />
       </ListGroup>
     </Container>
   );
