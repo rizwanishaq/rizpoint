@@ -1,12 +1,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Container, Form, Button } from "react-bootstrap";
+import { useLogin } from "../hooks/useLogin";
 
 const SignIn = () => {
+  const { login, error, isLoading } = useLogin();
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
+    await login(data.email, data.password);
     reset();
   };
 
@@ -30,9 +32,10 @@ const SignIn = () => {
             {...register("password", { required: true })}
           />
         </Form.Group>
-        <Button variant="dark" type="submit">
+        <Button variant="dark" type="submit" disabled={isLoading}>
           Signin
         </Button>
+        {error && <p className="text-danger">{error}</p>}
       </Form>
     </Container>
   );

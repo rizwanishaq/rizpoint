@@ -4,6 +4,8 @@
   "homepage": "https://rizwanishaq.github.io/react-demos",
   "private": true,
   "dependencies": {
+    "@mediapipe/camera_utils": "^0.3.1640029074",
+    "@mediapipe/face_mesh": "^0.4.1633559619",
     "@tensorflow-models/coco-ssd": "^2.2.2",
     "@tensorflow-models/face-landmarks-detection": "^1.0.1",
     "@tensorflow-models/speech-commands": "^0.5.4",

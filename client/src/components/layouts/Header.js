@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Container, Nav, Col } from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-
 import { ImHome } from "react-icons/im";
+import { useLogout } from "../../hooks/useLogout";
 
 const Header = () => {
+  const { logout, user } = useLogout();
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
@@ -14,6 +15,10 @@ const Header = () => {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  const handleClick = () => {
+    logout();
+  };
 
   return (
     <>
@@ -33,18 +38,25 @@ const Header = () => {
           </Nav>
 
           <Nav className="mr-auto">
-            <LinkContainer to="/">
-              <Nav.Link>Home</Nav.Link>
-            </LinkContainer>
             <LinkContainer to="/About">
               <Nav.Link>About</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/signin">
-              <Nav.Link>Login</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/signup">
-              <Nav.Link>Register</Nav.Link>
-            </LinkContainer>
+            {user ? (
+              <>
+                <LinkContainer to="/">
+                  <Nav.Link onClick={handleClick}>Logout</Nav.Link>
+                </LinkContainer>
+              </>
+            ) : (
+              <>
+                <LinkContainer to="/signin">
+                  <Nav.Link>Login</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/signup">
+                  <Nav.Link>Register</Nav.Link>
+                </LinkContainer>
+              </>
+            )}
           </Nav>
         </Container>
       </Navbar>

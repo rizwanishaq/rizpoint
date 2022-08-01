@@ -1,78 +1,103 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Webcam from "react-webcam";
-import * as faceapi from "face-api.js";
+import { FaceMesh } from "@mediapipe/face_mesh";
+import * as Facemesh from "@mediapipe/face_mesh";
+import * as cam from "@mediapipe/camera_utils";
 
 import { Container } from "react-bootstrap";
 
 const FaceDetection = () => {
-  const model_url =
-    "https://cdn.jsdelivr.net/gh/rizwanishaq/facedetection/dist/models/";
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
-  const [model, setModel] = useState(false);
+  const connect = window.drawConnectors;
+  let camera = null;
 
-  useEffect(() => {
-    const loadModel = async () => {
-      const model = await Promise.all([
-        faceapi.nets.tinyFaceDetector.loadFromUri(model_url),
-        faceapi.nets.faceLandmark68Net.loadFromUri(model_url),
-        faceapi.nets.faceRecognitionNet.loadFromUri(model_url),
-        faceapi.nets.faceExpressionNet.loadFromUri(model_url),
-      ]);
-      setModel(true);
-      console.log("Model loaded");
-    };
-    loadModel();
-  }, [setModel]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (!model) return;
-      predictionFunction();
-    }, 100);
-
-    return () => clearInterval(timer);
-  }, [model]);
-
-  const drawPrediction = (predictions, ctx) => {};
-
-  const predictionFunction = async () => {
-    if (
-      typeof webcamRef.current !== "undefined" &&
-      webcamRef.current !== null &&
-      webcamRef.current.video.readyState === 4
-    ) {
-      canvasRef.current = faceapi.createCanvasFromMedia(
-        webcamRef.current.video
-      );
-
-      faceapi.matchDimensions(canvasRef.current, {
-        width: webcamRef.current.video.videoWidth,
-        height: webcamRef.current.video.videoHeight,
+  const drawLandmark = (multiFaceLandmarks, canvasCtx) => {
+    for (const landmarks of multiFaceLandmarks) {
+      // connect(canvasCtx, landmarks, Facemesh.FACEMESH_TESSELATION, {
+      //   color: "#C0C0C070",
+      //   lineWidth: 1,
+      // });
+      connect(canvasCtx, landmarks, Facemesh.FACEMESH_RIGHT_EYE, {
+        color: "#FF3030",
+        lineWidth: 1,
       });
-
-      const detections = await faceapi
-        .detectAllFaces(
-          webcamRef.current.video,
-          new faceapi.TinyFaceDetectorOptions()
-        )
-        .withFaceLandmarks()
-        .withFaceExpressions();
-
-      const resizedDetections = faceapi.resizeResults(detections, {
-        width: webcamRef.current.video.videoWidth,
-        height: webcamRef.current.video.videoHeight,
+      // connect(canvasCtx, landmarks, Facemesh.FACEMESH_RIGHT_EYEBROW, {
+      //   color: "#FF3030",
+      // });
+      connect(canvasCtx, landmarks, Facemesh.FACEMESH_LEFT_EYE, {
+        color: "#30FF30",
+        lineWidth: 1,
       });
-
-      canvasRef.current
-        .getContext("2d")
-        .clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-
-      faceapi.draw.drawDetections(canvasRef.current, resizedDetections);
-      faceapi.draw.drawFaceLandmarks(canvasRef.current, resizedDetections);
-      faceapi.draw.drawFaceExpressions(canvasRef.current, resizedDetections);
+      // connect(canvasCtx, landmarks, Facemesh.FACEMESH_LEFT_EYEBROW, {
+      //   color: "#30FF30",
+      // });
+      connect(canvasCtx, landmarks, Facemesh.FACEMESH_FACE_OVAL, {
+        color: "#E0E0E0",
+        lineWidth: 1,
+      });
+      connect(canvasCtx, landmarks, Facemesh.FACEMESH_LIPS, {
+        color: "#E0E0E0",
+        lineWidth: 1,
+      });
     }
   };
+
+  const onResults = (results) => {
+    const videoWidth = webcamRef.current.video.videoWidth;
+    const videoHeight = webcamRef.current.video.videoHeight;
+
+    // Set canvas width
+    canvasRef.current.width = videoWidth;
+    canvasRef.current.height = videoHeight;
+
+    const canvasElement = canvasRef.current;
+    const canvasCtx = canvasElement.getContext("2d");
+
+    canvasCtx.save();
+    canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+    canvasCtx.drawImage(
+      results.image,
+      0,
+      0,
+      canvasElement.width,
+      canvasElement.height
+    );
+    if (results.multiFaceLandmarks)
+      drawLandmark(results.multiFaceLandmarks, canvasCtx);
+
+    canvasCtx.restore();
+  };
+
+  useEffect(() => {
+    const faceMesh = new FaceMesh({
+      locateFile: (file) => {
+        return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`;
+      },
+    });
+    faceMesh.setOptions({
+      maxNumFaces: 1,
+      minDetectionConfidence: 0.5,
+      minTrackingConfidence: 0.5,
+      selfieMode: true,
+    });
+
+    faceMesh.onResults(onResults);
+
+    if (
+      typeof webcamRef.current !== "undefined" &&
+      webcamRef.current !== null
+    ) {
+      camera = new cam.Camera(webcamRef.current.video, {
+        onFrame: async () => {
+          await faceMesh.send({ image: webcamRef.current.video });
+        },
+        width: 640,
+        height: 480,
+      });
+      camera.start();
+    }
+  }, []);
 
   return (
     <Container className="mt-2 text-center">
