@@ -169,6 +169,12 @@ const Home = () => {
               text={"GeoLocation example"}
               link={"/geolocation"}
             />
+            <BlogLink
+              key={"BinanceWebsocket"}
+              title={"BinanceWebsocket"}
+              text={"BinanceWebsocket example"}
+              link={"/binancewebsocket"}
+            />
           </Tab>
         </Tabs>
       </ListGroup>

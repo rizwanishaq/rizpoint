@@ -26,6 +26,7 @@ import UploadImage from "./pages/UploadImage";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import GeoLocation from "./pages/GeoLocation";
+import BinanceData from "./pages/BinanceData";
 // import MermaidExample from "./pages/MermaidExample";
 
 function App() {
@@ -62,8 +63,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/geolocation" element={<GeoLocation />} />
-
-        {/* <Route path="/mermaidjs" element={<MermaidExample />} /> */}
+        <Route path="/binancewebsocket" element={<BinanceData />} />
       </Routes>
     </>
   );

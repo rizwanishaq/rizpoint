@@ -3,7 +3,14 @@ import { storage } from "../firebase-config";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
 import { toast } from "react-toastify";
-import { Container, Button, Form, InputGroup, Carousel } from "react-bootstrap";
+import {
+  Container,
+  Button,
+  Form,
+  InputGroup,
+  Carousel,
+  Image,
+} from "react-bootstrap";
 
 const UploadImage = () => {
   const [imageUpload, setImageUpload] = useState(null);
@@ -16,7 +23,7 @@ const UploadImage = () => {
     listAll(imageListRef).then((response) => {
       setImageList([]);
       response.items.map((item) => {
-        getDownloadURL(item).then((url) => {
+        return getDownloadURL(item).then((url) => {
           setImageList((prev) => [...prev, url]);
         });
       });
@@ -42,7 +49,14 @@ const UploadImage = () => {
         {imageList.map((url, idx) => {
           return (
             <Carousel.Item key={`${url}-${idx}`}>
-              <img src={url} key={url} className="w-10" />
+              <Image
+                fluid={true}
+                src={url}
+                key={url}
+                thumbnail={true}
+                rounded={true}
+                className="w-25 h-25"
+              />
             </Carousel.Item>
           );
         })}
