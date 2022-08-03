@@ -1,27 +1,68 @@
 import React, { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
+import Chart from "react-apexcharts";
 
 const BinanceData = () => {
-  const [data, setData] = useState({});
+  const [series, setSeries] = useState([
+    {
+      data: [],
+    },
+  ]);
+  const options = {
+    chart: {
+      type: "candlestick",
+    },
+    title: {
+      text: "CandleStick Chart",
+      align: "left",
+    },
+    xaxis: {
+      type: "datetime",
+    },
+    yaxis: {
+      tooltip: {
+        enabled: true,
+      },
+    },
+  };
+
   const { lastMessage } = useWebSocket(
-    "wss://stream.binance.com:9443/ws/btcusdt@kline_1m"
+    "wss://stream.binance.com:9443/ws/btcusdt@trade"
   );
 
   useEffect(() => {
     if (lastMessage !== null) {
-      setData(JSON.parse(lastMessage.data));
+      const response = JSON.parse(lastMessage.data);
+      console.log(response);
+      setSeries((prevState) => {
+        return [
+          {
+            data: [
+              ...prevState[0].data,
+              {
+                x: new Date(response["E"]).toLocaleString("es-ES"),
+                y: +response["p"],
+              },
+            ],
+          },
+        ];
+      });
     }
   }, [lastMessage]);
 
   return (
     <>
-      <div>{JSON.stringify(data)}</div>
-      <div>e: {data["e"]}</div>
-      <div>E: {data["E"]}</div>
-      <div>s: {data["s"]}</div>
-      <div>k: {JSON.stringify(data["k"])}</div>
+      <Chart options={options} series={series} type="line" width="500" />
     </>
   );
+  // return (
+  //   <>
+  //     <div>{JSON.stringify(data)}</div>
+  //     <div>e: {data["e"]}</div>
+  //     <div>Date: {new Date(data["E"]).toLocaleString("es-ES")}</div>
+  //     <div>price: {data["p"]}</div>
+  //   </>
+  // );
 };
 
 export default BinanceData;

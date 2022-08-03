@@ -1,10 +1,14 @@
 # My Variables
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWU4ZDk1N2YyMDBhYTcyNjUyMWU0YzI1In0sImlhdCI6MTU4NjMzODcxNywiZXhwIjoxNTg2Njk4NzE3fQ.ChR446yYuA-D-w6cdYDDkH4WV65kYUNYHBoWg_7TIJ0
+
 ### Get request (auth)
-GET http://localhost:5000/api/workouts/
+GET http://localhost:5000/api/workouts/ 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmRmYTA5ZDhkYzAyNWRlNDA4ODAxNTIiLCJpYXQiOjE2NTk1MTcxMzAsImV4cCI6MTY1OTc3NjMzMH0.BDHIYwlUTLtfMbOc7btsDZZi5lNSrecuXJDHKhBwZVk
 
 ### Get contact
 GET http://localhost:5000/api/workouts/62bed0b22137510e9b5deff6
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmRmYTA5ZDhkYzAyNWRlNDA4ODAxNTIiLCJpYXQiOjE2NTk1MTcxMzAsImV4cCI6MTY1OTc3NjMzMH0.BDHIYwlUTLtfMbOc7btsDZZi5lNSrecuXJDHKhBwZVk
 
 
 
