@@ -41,7 +41,7 @@ const SimpleBootStrapExample = () => {
       </Navbar>
       <main>
         <Container>
-          <Row className="px-5 my-3">
+          <Row className="my-3">
             <Col sm={7}>
               <Image
                 src={"https://picsum.photos/900/400"}
@@ -73,22 +73,11 @@ const SimpleBootStrapExample = () => {
           <Row>
             <Col>
               <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src="https://picsum.photos/320/200" />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card style={{ width: "18rem" }}>
                 <Card.Img
                   variant="top"
-                  src="https://picsum.photos/id/200/320/200"
+                  src={`https://picsum.photos/id/${
+                    Math.floor(Math.random() * 500) + 1
+                  }/320/200`}
                 />
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -104,7 +93,27 @@ const SimpleBootStrapExample = () => {
               <Card style={{ width: "18rem" }}>
                 <Card.Img
                   variant="top"
-                  src="https://picsum.photos/id/400/320/200"
+                  src={`https://picsum.photos/id/${
+                    Math.floor(Math.random() * 500) + 1
+                  }/320/200`}
+                />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card style={{ width: "18rem" }}>
+                <Card.Img
+                  variant="top"
+                  src={`https://picsum.photos/id/${
+                    Math.floor(Math.random() * 500) + 1
+                  }/320/200`}
                 />
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>

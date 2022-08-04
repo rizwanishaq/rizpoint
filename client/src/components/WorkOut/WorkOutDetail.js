@@ -4,15 +4,23 @@ import { toast } from "react-toastify";
 import { useWorkoutsContext } from "../../hooks/useWorkoutsContext";
 import { AiFillDelete } from "react-icons/ai";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const WorkOutDetail = ({ workout }) => {
   const { dispatch } = useWorkoutsContext();
+  const { user } = useAuthContext();
 
   const handleClick = async () => {
+    if (!user) {
+      return;
+    }
     const response = await fetch(
       `http://localhost:5000/api/workouts/${workout._id}`,
       {
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
       }
     );
 

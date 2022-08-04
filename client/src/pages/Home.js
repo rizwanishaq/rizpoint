@@ -1,195 +1,74 @@
-import React from "react";
-import { Container, ListGroup, Tabs, Tab } from "react-bootstrap";
-import BlogLink from "../components/Blog/BlogLink";
+import React, { useState } from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
+import SelfDetail from "../components/Home/SelfDetail";
+import HomeImage from "../components/Home/HomeImage";
+import MiddleCard from "../components/Home/MiddleCard";
+import MachineLearning from "../components/Home/MachineLearning";
+import ReactJsCard from "../components/Home/ReactJsCard";
+import ChartCard from "../components/Home/ChartCard";
+import TypeCard from "../components/Home/TypeCard";
 
 const Home = () => {
+  const [pageType, setPageType] = useState("home");
+  const homeimageUrl = {
+    home: "https://picsum.photos/900/400",
+    machinelearning:
+      "https://images.unsplash.com/photo-1591453089816-0fbb971b454c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    reactjs:
+      "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    graphanddatabase:
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80",
+  };
+
   return (
     <Container className="mt-3">
-      <ListGroup>
-        <Tabs defaultActiveKey="machine" className="mb-3">
-          <Tab eventKey="machine-learning" title="Machine Learning">
-            <BlogLink
-              key={"Voice Control System"}
-              title={"Voice Control System"}
-              text={"Voice Control System example"}
-              link={"/voicecontrolsystem"}
-            />
+      <Row className="my-3">
+        <HomeImage />
+        {pageType === "home" && <SelfDetail />}
+        {pageType === "machinelearning" && <MachineLearning />}
+        {pageType === "reactjs" && <ReactJsCard />}
+        {pageType === "graphanddatabase" && <ChartCard />}
+      </Row>
 
-            <BlogLink
-              key={"Speech Commands"}
-              title={"Speech Commands"}
-              text={"Speech Commands example"}
-              link={"/speechcommand"}
-            />
-
-            <BlogLink
-              key={"Pitch-Detection"}
-              title={"Pitch-Detection"}
-              text={"Pitch-Detection example"}
-              link={"/pitchdetection"}
-            />
-
-            <BlogLink
-              key={"Event-Detection"}
-              title={"Event-Detection"}
-              text={"Event-Detection example"}
-              link={"/eventdetection"}
-            />
-
-            <BlogLink
-              key={"ImageCapture Example"}
-              title={"ImageCapture Example"}
-              text={"Image Capture example"}
-              link={"/imagecapture"}
-            />
-
-            <BlogLink
-              key={"ObjectDetection"}
-              title={"ObjectDetection"}
-              text={"Object detection using tensorflow js"}
-              link={"/objectdetection"}
-            />
-
-            <BlogLink
-              key={"FaceDetection"}
-              title={"FaceDetection"}
-              text={"Face detection example"}
-              link={"/facedetection"}
-            />
-          </Tab>
-          <Tab eventKey="others" title="Others">
-            <BlogLink
-              key={"workout"}
-              title={"Workout"}
-              text={"Workout connected to backend-with mongodb"}
-              link={"/workouts"}
-            />
-            <BlogLink
-              key={"D3 Scatter plot Example"}
-              title={"D3 Scatter plot Example"}
-              text={"This Example just show how to create a scatter plot in D3"}
-              link={"/piechart"}
-            />
-            <BlogLink
-              key={"Visx PieChart"}
-              title={"Visx PieChart"}
-              text={"PieChart example from VisX"}
-              link={"/pies"}
-            />
-
-            <BlogLink
-              key={"ApexChart"}
-              title={"ApexChart"}
-              text={"ApexChart example from ApexCharts"}
-              link={"/apexchart"}
-            />
-
-            <BlogLink
-              key={"ReChart"}
-              title={"ReChart"}
-              text={"ReChart example from ReChart"}
-              link={"/rechart"}
-            />
-
-            <BlogLink
-              key={"Image Preview Example"}
-              title={"Image Preview Example"}
-              text={"Just random task of image preview"}
-              link={"/imagepreview"}
-            />
-
-            <BlogLink
-              key={"Expense Tracker"}
-              title={"Expense Tracker"}
-              text={"Expense Tracker example"}
-              link={"/expensetracker"}
-            />
-
-            <BlogLink
-              key={"Covid Tracker"}
-              title={"Covid Tracker"}
-              text={"Covid Tracker example from CovidTracker"}
-              link={"/covidtracker"}
-            />
-
-            <BlogLink
-              key={"Real Time Chart"}
-              title={"Real Time Chart"}
-              text={"Real Time Chart example from using websocket"}
-              link={"/realtimechart"}
-            />
-
-            <BlogLink
-              key={"Firebase Tutorial"}
-              title={"Firebase Tutorial"}
-              text={"Firebase Tutorial example"}
-              link={"/firebasetutorial"}
-            />
-
-            <BlogLink
-              key={"Real Time Chart with ApexChart"}
-              title={"Real Time Chart with ApexChart"}
-              text={"Real Time Chart example from ApexChart"}
-              link={"/realtimeapexchart"}
-            />
-
-            <BlogLink
-              key={"MermaidJs"}
-              title={"MermaidJs"}
-              text={"MermaidJs example"}
-              link={"/mermaidjs"}
-            />
-            <BlogLink
-              key={"Search"}
-              title={"Search"}
-              text={"Search Text example"}
-              link={"/search"}
-            />
-            <BlogLink
-              key={"UploadImage"}
-              title={"UploadImage"}
-              text={"Upload Image example"}
-              link={"/uploadimage"}
-            />
-            <BlogLink
-              key={"SignUp"}
-              title={"SignUp"}
-              text={"SignUp example"}
-              link={"/signup"}
-            />
-            <BlogLink
-              key={"SignIn"}
-              title={"SignIn"}
-              text={"SignIn example"}
-              link={"/signin"}
-            />
-            <BlogLink
-              key={"GeoLocation"}
-              title={"GeoLocation"}
-              text={"GeoLocation example"}
-              link={"/geolocation"}
-            />
-            <BlogLink
-              key={"BinanceWebsocket"}
-              title={"BinanceWebsocket"}
-              text={"BinanceWebsocket example"}
-              link={"/binancewebsocket"}
-            />
-            <BlogLink
-              key={"UseWebsocket Example"}
-              title={"UseWebsocket Example"}
-              text={"UseWebsocket Example"}
-              link={"/usewebsocketexample"}
-            />
-            <BlogLink
-              key={"BootStrapExample"}
-              title={"BootStrapExample"}
-              text={"BootStrap Example"}
-              link={"/bootstrapexample"}
-            />
-          </Tab>
-        </Tabs>
-      </ListGroup>
+      <Row>
+        <Link to="#">
+          <MiddleCard setPageType={setPageType} />
+        </Link>
+      </Row>
+      <Row>
+        <Col>
+          <TypeCard
+            title={"Machine Learning"}
+            text={
+              "Examples of machine learning done with reactjs and tensorflow js"
+            }
+            type={"machinelearning"}
+            setPageType={setPageType}
+            imageUrl={homeimageUrl["machinelearning"]}
+          />
+        </Col>
+        <Col>
+          <TypeCard
+            title={"ReactJs"}
+            text={"Simple reactjs demo, hooks and usecontext"}
+            type={"reactjs"}
+            setPageType={setPageType}
+            imageUrl={homeimageUrl["reactjs"]}
+          />
+        </Col>
+        <Col>
+          <TypeCard
+            title={"Graph & Databases"}
+            text={"Graph and database demos with reactjs"}
+            type={"graphanddatabase"}
+            setPageType={setPageType}
+            imageUrl={homeimageUrl["graphanddatabase"]}
+          />
+        </Col>
+      </Row>
     </Container>
   );
 };

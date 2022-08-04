@@ -3,9 +3,11 @@ import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { useWorkoutsContext } from "../../hooks/useWorkoutsContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const WorkOutForm = () => {
   const { dispatch } = useWorkoutsContext();
+  const { user } = useAuthContext();
 
   const [error, setError] = useState("");
   const {
@@ -17,9 +19,17 @@ const WorkOutForm = () => {
   const onSubmit = async (data) => {
     const { title, load, reps } = data;
 
+    if (!user) {
+      setError("Please login to add a workout");
+      return;
+    }
+
     const response = await fetch("http://localhost:5000/api/workouts/", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
       body: JSON.stringify({ title, load, reps }),
     });
 
