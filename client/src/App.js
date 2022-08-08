@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Header from "./components/layouts/Header";
 import PieExample from "./pages/PieExample";
 import Home from "./pages/Home";
@@ -28,9 +28,14 @@ import SignIn from "./pages/SignIn";
 import BinanceData from "./pages/BinanceData";
 import UseWebSocketExample from "./pages/UseWebSocketExample";
 import SimpleBootStrapExample from "./pages/SimpleBootStrapExample";
+import D3Example from "./pages/D3Example";
+import VideoFrames from "./pages/VideoFrames";
+import SelfiSegmentation from "./pages/SelfiSegmentation";
 // import Footer from "./components/layouts/Footer";
+import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
+  const { user } = useAuthContext();
   return (
     <>
       <Header />
@@ -39,14 +44,13 @@ function App() {
         <Route path="/react-demos" element={<Home />} />
         <Route path="/About" element={<Personal />} />
         <Route path="/piechart" element={<ScatterPlot />} />
-        {/* <Route
-          path="/simple"
-          element={<VisxExample width={900} height={500} />}
-        /> */}
         <Route path="/pies" element={<PieExample />} />
         <Route path="/apexchart" element={<ApexChart />} />
         <Route path="/rechart" element={<ReChartExample />} />
-        <Route path="/workouts" element={<WorkOuts />} />
+        <Route
+          path="/workouts"
+          element={user ? <WorkOuts /> : <Navigate to="/" />}
+        />
         <Route path="/imagepreview" element={<ImagePreview />} />
         <Route path="/expensetracker" element={<ExpenseTracker />} />
         <Route path="/covidtracker" element={<CovidTracker />} />
@@ -62,11 +66,20 @@ function App() {
         <Route path="/facedetection" element={<FaceDetection />} />
         <Route path="/search" element={<SearchBar />} />
         <Route path="/uploadimage" element={<UploadImage />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route
+          path="/signup"
+          element={!user ? <SignUp /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/signin"
+          element={!user ? <SignIn /> : <Navigate to="/" />}
+        />
         <Route path="/binancewebsocket" element={<BinanceData />} />
         <Route path="/usewebsocketexample" element={<UseWebSocketExample />} />
         <Route path="/bootstrapexample" element={<SimpleBootStrapExample />} />
+        <Route path="/d3examples" element={<D3Example />} />
+        <Route path="/videoframes" element={<VideoFrames />} />
+        <Route path="/selfeisegmentation" element={<SelfiSegmentation />} />
       </Routes>
       {/* <Footer /> */}
     </>

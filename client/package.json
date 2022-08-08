@@ -5,7 +5,10 @@
   "private": true,
   "dependencies": {
     "@mediapipe/camera_utils": "^0.3.1640029074",
+    "@mediapipe/control_utils": "^0.6.1629159505",
+    "@mediapipe/drawing_utils": "^0.3.1620248257",
     "@mediapipe/face_mesh": "^0.4.1633559619",
+    "@mediapipe/selfie_segmentation": "^0.1.1632777926",
     "@tensorflow-models/coco-ssd": "^2.2.2",
     "@tensorflow-models/face-landmarks-detection": "^1.0.1",
     "@tensorflow-models/speech-commands": "^0.5.4",

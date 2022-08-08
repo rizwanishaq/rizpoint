@@ -53,6 +53,13 @@ const ChartCard = () => {
           text={"MermaidJs example"}
           link={"/mermaidjs"}
         />
+
+        <BlogLink
+          key={"D3Examples"}
+          title={"D3Examples"}
+          text={"D3 Examples"}
+          link={"/d3examples"}
+        />
       </ListGroup>
     </Col>
   );

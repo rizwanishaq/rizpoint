@@ -65,6 +65,12 @@ const ReactJsCard = () => {
           text={"UseWebsocket Example"}
           link={"/usewebsocketexample"}
         />
+        <BlogLink
+          key={"VideoFrames"}
+          title={"VideoFrames"}
+          text={"How to get the videos frames"}
+          link={"/videoframes"}
+        />
       </ListGroup>
     </Col>
   );

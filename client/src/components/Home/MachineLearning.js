@@ -54,6 +54,12 @@ const MachineLearning = () => {
           text={"Face detection example"}
           link={"/facedetection"}
         />
+        <BlogLink
+          key={"Selfie Segmentation"}
+          title={"Selfie Segmentation"}
+          text={"Selfie Segmentation example"}
+          link={"/selfeisegmentation"}
+        />
       </ListGroup>
     </Col>
   );

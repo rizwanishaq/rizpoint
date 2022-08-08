@@ -1,49 +1,53 @@
 import React from "react";
 import { Row, ListGroup, Container, Card } from "react-bootstrap";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Experience = () => {
+  const { user } = useAuthContext();
   return (
     <Container>
       <Row className="mb-1">
-        <Card>
-          <Card.Body>
-            <Card.Header>
-              Research and Development Engineer (AI)
-              <Card.Subtitle className="text-muted">
-                DialogaGroup, Bilbao, Spain
+        {user && (
+          <Card>
+            <Card.Body>
+              <Card.Header>
+                Research and Development Engineer (AI)
                 <Card.Subtitle className="text-muted">
-                  <small>Jan-2016 - Present</small>
+                  DialogaGroup, Bilbao, Spain
+                  <Card.Subtitle className="text-muted">
+                    <small>Jan-2016 - Present</small>
+                  </Card.Subtitle>
                 </Card.Subtitle>
-              </Card.Subtitle>
-            </Card.Header>
-            <Card.Text>
-              <ListGroup variant="flush">
-                <ListGroup.Item>
-                  Design, test, and delpoyemnt of different Artificial
-                  Intelligence(AI) project related to computer vi-
-                  sion(generation of video from real-time audio samples) and
-                  speech processing (Speaker/Language/Gender
-                  Identification/verification from real-time audio samples)
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  Coordinating all the technical and developement issues/risks
-                  related to modeling, testing and deployment of the AI models
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  Designing of the AI models using Tensorflow and Pytorch
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  Deployment of the AI models using NVIDIA Triton Inference
-                  Server
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  Deployment of APIs through NodeJS(front(reactjs)/back(nodejs),
-                  gRPC)
-                </ListGroup.Item>
-              </ListGroup>
-            </Card.Text>
-          </Card.Body>
-        </Card>
+              </Card.Header>
+              <Card.Text>
+                <ListGroup variant="flush">
+                  <ListGroup.Item>
+                    Design, test, and delpoyemnt of different Artificial
+                    Intelligence(AI) project related to computer vi-
+                    sion(generation of video from real-time audio samples) and
+                    speech processing (Speaker/Language/Gender
+                    Identification/verification from real-time audio samples)
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    Coordinating all the technical and developement issues/risks
+                    related to modeling, testing and deployment of the AI models
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    Designing of the AI models using Tensorflow and Pytorch
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    Deployment of the AI models using NVIDIA Triton Inference
+                    Server
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    Deployment of APIs through
+                    NodeJS(front(reactjs)/back(nodejs), gRPC)
+                  </ListGroup.Item>
+                </ListGroup>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        )}
       </Row>
       <Row className="mb-1">
         <Card>
