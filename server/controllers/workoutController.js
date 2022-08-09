@@ -4,7 +4,8 @@ const Workout = require("../models/workoutModel.js");
 
 // Get all workouts
 getWorkouts = asyncHandler(async (req, res) => {
-  const workouts = await Workout.find({}).sort({ createdAt: -1 });
+  const user_id = req.user._id;
+  const workouts = await Workout.find({ user_id }).sort({ createdAt: -1 });
   res.status(200).json(workouts);
 });
 
@@ -28,8 +29,9 @@ getWorkout = asyncHandler(async (req, res) => {
 // Post a new workout
 const createWorkout = asyncHandler(async (req, res) => {
   const { title, load, reps } = req.body;
+  const user_id = req.user._id;
 
-  const workout = await Workout.create({ title, load, reps });
+  const workout = await Workout.create({ title, load, reps, user_id });
   if (workout) {
     res.status(200).json(workout);
   } else {

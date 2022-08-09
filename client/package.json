@@ -10,7 +10,6 @@
     "@mediapipe/face_mesh": "^0.4.1633559619",
     "@mediapipe/selfie_segmentation": "^0.1.1632777926",
     "@tensorflow-models/coco-ssd": "^2.2.2",
-    "@tensorflow-models/face-landmarks-detection": "^1.0.1",
     "@tensorflow-models/speech-commands": "^0.5.4",
     "@tensorflow/tfjs": "^3.18.0",
     "@tensorflow/tfjs-node": "^1.7.4",

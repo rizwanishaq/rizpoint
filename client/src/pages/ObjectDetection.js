@@ -31,7 +31,7 @@ const ObjectDetection = () => {
     // setPredictionData(predictions);
     for (let n = 0; n < predictions.length; n++) {
       // Check scores
-      if (predictions[n].score > 0.8) {
+      if (predictions[n].score > 0.6) {
         let bboxLeft = predictions[n].bbox[0];
         let bboxTop = predictions[n].bbox[1];
         let bboxWidth = predictions[n].bbox[2];

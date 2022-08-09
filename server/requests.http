@@ -3,7 +3,7 @@
 ### Get request (auth)
 GET http://localhost:5000/api/workouts/ 
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmRmYTA5ZDhkYzAyNWRlNDA4ODAxNTIiLCJpYXQiOjE2NTk1MTcxMzAsImV4cCI6MTY1OTc3NjMzMH0.BDHIYwlUTLtfMbOc7btsDZZi5lNSrecuXJDHKhBwZVk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmRmYTA5ZDhkYzAyNWRlNDA4ODAxNTIiLCJpYXQiOjE2NjAwMzIxNjYsImV4cCI6MTY2MDI5MTM2Nn0.9CXfY4Z1GT2BpuPboQ8RBcjBW9reveWAOuBjd9vp26Y
 
 ### Get contact
 GET http://localhost:5000/api/workouts/62bed0b22137510e9b5deff6

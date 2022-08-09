@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 
 const BlogLink = ({ title, text, link }) => {
   return (
-    <ListGroup.Item>
-      <Link to={link}>{text}</Link>
+    <ListGroup.Item style={{ border: "none" }}>
+      <Link to={link} style={{ textDecoration: "none" }}>
+        {" "}
+        {text}
+      </Link>
     </ListGroup.Item>
   );
 };
